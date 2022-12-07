@@ -1,0 +1,152 @@
+:root {
+  --clr-text: #fff;
+  --clr-bg-dark: #242424;
+  --clr-bg-light: #3b3b3b;
+  --clr-accent: #ff7600;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 2;
+  /* margin: 6.4rem auto; */
+  color: var(--clr-text);
+  /* margin: 0; */
+  /* overflow: hidden; */
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--clr-text);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  z-index: 999;
+  background: #2b0d00b3;
+  transition: all ease-in-out 0.2s;
+}
+
+.hide-preloader {
+  z-index: -999;
+  visibility: hidden;
+}
+
+main {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(43, 13, 0, 0.7);
+}
+
+video {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.btn-toggle {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  left: 10rem;
+  bottom: 10rem;
+  width: 12rem;
+  height: 4rem;
+  padding: 2rem;
+  background-color: #fff;
+  padding: 1em 2em;
+  border-radius: 2rem;
+  z-index: 1;
+  filter: brightness(0.6);
+  cursor: pointer;
+}
+
+.btn {
+  border: 0;
+  background-color: #fff;
+  text-transform: capitalize;
+  color: var(--clr-accent);
+  cursor: pointer;
+}
+
+.btn-switch {
+  position: absolute;
+  transform: translate(-35%, -25%);
+  /* transform: translate(75%, -25%); */
+  border-radius: 2rem;
+  width: 6rem;
+  height: 4rem;
+  background-color: #ff7600;
+}
+
+.btn-active {
+  transform: translate(75%, -25%);
+}
+
+h1 {
+  top: 4rem;
+  position: absolute;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  text-transform: capitalize;
+  font-size: 3.6rem;
+  width: 100%;
+  /* font-size: clump(minmax(45ch, 2.4rem, 75ch)); */
+  opacity: 0.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 60g0px) {
+  .btn-toggle {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    /* left: 24rem;
+    bottom: 10rem; */
+    bottom: 10rem;
+    left: 50%;
+    transform: translate(-50%, 0rem);
+    width: 12rem;
+    height: 4rem;
+    padding: 2rem;
+    background-color: #fff;
+    padding: 1em 2em;
+    border-radius: 2rem;
+    z-index: 1;
+    filter: brightness(0.6);
+    cursor: pointer;
+  }
+}
